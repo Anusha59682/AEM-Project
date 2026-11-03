@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="ZAVÉLUNE Header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <brandName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Brand Name"
+                                name="./brandName"
+                                value="ZAVÉLUNE"/>
+
+                            <logoPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Logo Path"
+                                name="./logoPath"
+                                rootPath="/content/dam"/>
+
+                            <headerEnabled
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                text="Enable Header"
+                                name="./headerEnabled"
+                                value="{Boolean}true"
+                                uncheckedValue="{Boolean}false"
+                                checked="{Boolean}true"/>
+
+                            <navigationItems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="Navigation Items"
+                                composite="{Boolean}true">
+
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./navigationItems">
+
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <label
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Navigation Label"
+                                            name="./label"/>
+
+                                        <linkPath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Navigation Link Path"
+                                            name="./linkPath"
+                                            rootPath="/content"
+                                            value="/content/demo/us/en/zavelune"/>
+
+                                        <date
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                            fieldLabel="Date"
+                                            name="./date"
+                                            type="date"
+                                            displayFormat="YYYY-MM-DD"
+                                            valueFormat="YYYY-MM-DD"/>
+
+                                    </items>
+                                </field>
+                            </navigationItems>
+
+                        </items>
+                    </column>
+                </items>
+            </columns>
+        </items>
+    </content>
+</jcr:root>

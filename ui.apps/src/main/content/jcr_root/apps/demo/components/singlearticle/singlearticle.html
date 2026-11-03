@@ -1,0 +1,10 @@
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.css @ categories='demo.singlearticle'}"
+/>
+
+<div class="${properties.enablePII == 'true' ? properties.cssClass : ''}">
+  <sly data-sly-test="${wcmmode.edit}">
+    <p>Single Article Component</p>
+  </sly>
+</div>

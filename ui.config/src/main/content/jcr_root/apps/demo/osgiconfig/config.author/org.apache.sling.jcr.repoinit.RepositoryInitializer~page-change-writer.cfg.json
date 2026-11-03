@@ -1,0 +1,6 @@
+{
+  "scripts": [
+    "create service user page-change-writer with forced path system/cq:services/demo",
+    "set principal ACL for page-change-writer\n    allow jcr:read,rep:write,crx:replicate on /content\n    allow jcr:read,rep:write on /var\nend"
+  ]
+}

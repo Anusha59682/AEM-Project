@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Drop Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Text"/>
+                    <countryList
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Countries">
+                        <items jcr:primaryType="nt:unstructured">
+                            <USA
+                                jcr:primaryType="nt:unstructured"
+                                text="USA"
+                                value="usa"/>
+                            <UK
+                                jcr:primaryType="nt:unstructured"
+                                text="UK&#xa;"
+                                value="uk"/>
+                            <INDIA
+                                jcr:primaryType="nt:unstructured"
+                                text="INDIA&#xa;"
+                                value="india"/>
+                        </items>
+                    </countryList>
+                    <dropdown
+                        granite:class="cq-dialog-dropdown-showhide"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Select Gender"
+                        name="./dropdown">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target="showhidetargets"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <male
+                                jcr:primaryType="nt:unstructured"
+                                text="male"
+                                value="male"/>
+                            <female
+                                jcr:primaryType="nt:unstructured"
+                                text="female"
+                                value="female"/>
+                        </items>
+                    </dropdown>
+                    <targetm
+                        granite:class="showhidetargets"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="male"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <malefield
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Mr."
+                                name="./mfield"/>
+                        </items>
+                    </targetm>
+                    <targetf
+                        granite:class="showhidetargets"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="female"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <femalefield
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Mrs."
+                                name="./field"/>
+                        </items>
+                    </targetf>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

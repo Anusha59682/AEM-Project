@@ -1,0 +1,98 @@
+<sly
+  data-sly-use.sidebar="com.adobe.aem.guides.demo.core.models.SidebarModel"
+  data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+>
+  <sly data-sly-call="${clientlib.all @ categories='demo.sidebar'}"></sly>
+
+  <div class="zav-sidebar-component" data-sly-test="${sidebar.enableSwitch}">
+    <!-- Menu button: visible when sidebar is closed -->
+    <button
+      class="zav-menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="zavSidebar"
+    >
+      <span>&#9776;</span>
+    </button>
+
+    <!-- Background overlay -->
+    <div class="zav-sidebar-overlay" data-sidebar-overlay></div>
+
+    <!-- Sidebar drawer -->
+    <aside class="zav-sidebar" id="zavSidebar" aria-hidden="true">
+      <div class="zav-sidebar-top">
+        <a
+          href="${sidebar.logoLink @ extension='html'}"
+          class="zav-sidebar-logo"
+        >
+          <img
+            data-sly-test="${sidebar.logoPath}"
+            src="${sidebar.logoPath}"
+            alt="ZAVÉLUNE Logo"
+          />
+
+          <span data-sly-test="${!sidebar.logoPath}"> ZAVÉLUNE </span>
+        </a>
+
+        <button
+          class="zav-sidebar-close"
+          type="button"
+          aria-label="Close navigation"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Header Links -->
+      <div
+        class="zav-sidebar-header-links"
+        data-sly-list.link="${sidebar.headerLinks}"
+      >
+        <a href="#" class="zav-sidebar-link">
+          <img data-sly-test="${link.image}" src="${link.image}" alt="" />
+          <span>${link.name}</span>
+        </a>
+      </div>
+
+      <!-- Sidebar Navigation -->
+
+      <nav
+        class="zav-sidebar-navigation"
+        aria-label="Sidebar navigation"
+        data-sly-list.navigation="${sidebar.sideBarNavigation}"
+      >
+        <div class="zav-sidebar-navigation-item">
+          <img
+            class="zav-desktop-icon"
+            data-sly-test="${navigation.desktopIcon}"
+            src="${navigation.desktopIcon}"
+            alt=""
+          />
+
+          <img
+            class="zav-mobile-icon"
+            data-sly-test="${navigation.mobileIcon}"
+            src="${navigation.mobileIcon}"
+            alt=""
+          />
+
+          <div
+            class="zav-sidebar-sub-links"
+            data-sly-list.item="${navigation.navigationItems}"
+          >
+            <a href="${item.navigationURL @ extension='html'}">
+              ${item.navigationName}
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Region -->
+      <div class="zav-sidebar-region">
+        <span>Region</span>
+        <strong>${sidebar.country}</strong>
+      </div>
+    </aside>
+  </div>
+</sly>

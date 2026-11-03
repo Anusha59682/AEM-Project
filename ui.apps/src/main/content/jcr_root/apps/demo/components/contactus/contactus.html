@@ -1,0 +1,47 @@
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.css @ categories='demo.contactus'}"
+/>
+
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.js @ categories='demo.contactus'}"
+/>
+
+<section class="contact-section">
+  <h2>${properties.heading || 'Contact Us'}</h2>
+
+  <form id="contactForm">
+    <input type="hidden" id="contactId" value="" />
+
+    <label for="contactName"> ${properties.nameLabel || 'Name'} </label>
+    <input
+      type="text"
+      id="contactName"
+      placeholder="${properties.namePlaceholder || 'Enter your name'}"
+      required
+    />
+
+    <label for="contactEmail"> ${properties.emailLabel || 'Email'} </label>
+    <input
+      type="email"
+      id="contactEmail"
+      placeholder="${properties.emailPlaceholder || 'Enter your email'}"
+      required
+    />
+
+    <label for="contactMobile"> ${properties.mobileLabel || 'Mobile'} </label>
+    <input
+      type="tel"
+      id="contactMobile"
+      placeholder="${properties.mobilePlaceholder || 'Enter mobile number'}"
+      pattern="[0-9]{10}"
+      required
+    />
+
+    <button type="submit" id="saveButton">Submit</button>
+    <button type="button" id="cancelEdit" hidden>Cancel Edit</button>
+
+    <p id="contactMessage" role="status"></p>
+  </form>
+</section>

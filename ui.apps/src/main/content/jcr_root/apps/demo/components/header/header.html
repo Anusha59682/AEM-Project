@@ -1,0 +1,27 @@
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.css @ categories='demo.header'}"
+>
+</sly>
+
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.HeaderComponent">
+  <header class="zav-header" data-sly-test="${model.headerEnabled}">
+    <!-- Brand -->
+    <div class="zav-header__brand">
+      <a href="/content/demo/us/en/zavelune.html">
+        <h1>ZAVÉLUNE</h1>
+        <p class="zav-header__tagline">THE ART OF FRAGRANCE</p>
+      </a>
+    </div>
+
+    <!-- Navigation -->
+
+    <nav class="zav-header__nav">
+      <ul data-sly-list.item="${model.navigationItems}">
+        <li>
+          <a href="${item.linkPath @ extension='html'}"> ${item.label} </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</sly>

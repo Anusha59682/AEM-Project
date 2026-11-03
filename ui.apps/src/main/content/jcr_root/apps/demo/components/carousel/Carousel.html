@@ -1,0 +1,58 @@
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.css @ categories='demo.carousel'}"
+>
+</sly>
+
+<sly
+  data-sly-use.carousel="com.adobe.aem.guides.demo.core.models.CarouselModel"
+>
+  <section class="zav-carousel">
+    <div class="zav-carousel__heading">
+      <p class="zav-carousel__subtitle">THE ART OF FRAGRANCE</p>
+      <h2>Discover Our Fragrances</h2>
+      <p>Explore our exclusive perfume collection.</p>
+    </div>
+
+    <div
+      class="zav-carousel__products"
+      data-sly-test="${carousel.products.size > 0}"
+    >
+      <sly data-sly-list.product="${carousel.products}">
+        <article class="zav-product-card">
+          <div class="zav-product-card__image">
+            <img
+              data-sly-test="${product.productImage}"
+              src="${product.productImage}"
+              alt="${product.productName}"
+            />
+
+            <div
+              data-sly-test="${!product.productImage}"
+              class="zav-product-card__placeholder"
+            >
+              ZAVÉLUNE
+            </div>
+          </div>
+
+          <div class="zav-product-card__details">
+            <h3>${product.productName}</h3>
+
+            <h4>Fragrance Notes</h4>
+
+            <ul data-sly-list.note="${product.notes}">
+              <li>${note.noteName}</li>
+            </ul>
+          </div>
+        </article>
+      </sly>
+    </div>
+
+    <p
+      class="zav-carousel__empty"
+      data-sly-test="${carousel.products.size == 0}"
+    >
+      Our fragrance collection is coming soon.
+    </p>
+  </section>
+</sly>

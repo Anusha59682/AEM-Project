@@ -1,0 +1,92 @@
+.contact-table-section {
+  width: 95%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f8f5f0;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.contact-table-section h2 {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  color: #29231d;
+  margin-bottom: 25px;
+}
+
+.contact-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  text-align: left;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 15px;
+  border: 1px solid #ded5c8;
+  font-size: 15px;
+}
+
+.contact-table th {
+  background: #29231d;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-table tbody tr:nth-child(even) {
+  background: #f5f0e8;
+}
+
+.contact-table tbody tr:hover {
+  background: #eee5d8;
+}
+
+.contact-actions {
+  white-space: nowrap;
+}
+
+.contact-actions button {
+  padding: 8px 14px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.edit-contact {
+  background: #a18452;
+}
+
+.delete-contact {
+  background: #8b3a32;
+}
+
+.contact-actions button:hover {
+  opacity: 0.85;
+}
+
+.no-records {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .contact-table-section {
+    padding: 12px;
+  }
+
+  .contact-table th,
+  .contact-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

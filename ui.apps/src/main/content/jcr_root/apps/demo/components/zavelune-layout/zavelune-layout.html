@@ -1,0 +1,14 @@
+<sly data-sly-use.container="com.adobe.cq.wcm.core.components.models.Container">
+</sly>
+
+<div
+  class="zavelune-layout"
+  data-sly-test="${container.items}"
+  id="${container.id}"
+>
+  <div
+    data-sly-repeat.item="${container.items}"
+    class="zavelune-layout-item"
+    data-sly-resource="${item.resource}"
+  ></div>
+</div>

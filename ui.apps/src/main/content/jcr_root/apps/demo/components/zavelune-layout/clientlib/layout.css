@@ -1,0 +1,49 @@
+.zavelune-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  grid-template-areas:
+    "sidebar header"
+    "sidebar carousel";
+  width: 100%;
+  min-height: 100vh;
+  align-items: start;
+}
+
+.zavelune-layout-item:nth-child(1) {
+  grid-area: header;
+  min-width: 0;
+}
+
+.zavelune-layout-item:nth-child(2) {
+  grid-area: carousel;
+  min-width: 0;
+}
+
+.zavelune-layout-item:nth-child(3) {
+  grid-area: sidebar;
+  min-width: 0;
+}
+
+.zavelune-layout-item .zav-sidebar {
+  position: sticky;
+  top: 0;
+  width: 235px;
+  min-height: 100vh;
+}
+
+@media (max-width: 700px) {
+  .zavelune-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .zavelune-layout-item {
+    width: 100%;
+  }
+
+  .zavelune-layout-item .zav-sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+}

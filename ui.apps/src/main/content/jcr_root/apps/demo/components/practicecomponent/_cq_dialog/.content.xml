@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Practice Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="demo.site&#xa;">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <textfield
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        emptyText="Enter text here"
+                        fieldLabel="Text Field"
+                        name="./text"/>
+                    <numberfield
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldLabel="Number Field"
+                        min="{Long}0"
+                        name="./number"/>
+                    <checkbox
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        fieldLabel="Checkbox"
+                        name="./enabled"
+                        text="Enable option"
+                        uncheckedValue="false"
+                        value="true"/>
+                    <dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Display Style"
+                        name="./displayStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                text="Default"
+                                value="default"/>
+                            <highlighted
+                                jcr:primaryType="nt:unstructured"
+                                text="Highlighted"
+                                value="highlighted"/>
+                        </items>
+                    </dropdown>
+                    <pathfield
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Content Path"
+                        name="./contentPath"
+                        rootPath="/content"/>
+                    <colorpicker
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                        fieldLabel="Background Color"
+                        name="./backgroundColor"
+                        showDefaultColors="{Boolean}true"/>
+                    <datepicker
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                        displayedFormat="YYYY-MM-DD"
+                        fieldLabel="Select Date"
+                        name="./date"
+                        type="date"
+                        valueFormat="YYYY-MM-DD"/>
+                    <skills
+                        granite:class="skills-multifield"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}false"
+                        fieldLabel="Skills">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            emptyText="Enter a skill"
+                            name="./skills"/>
+                    </skills>
+                    <courses
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Courses">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./courses">
+                            <items jcr:primaryType="nt:unstructured">
+                                <courseName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Course Name"
+                                    name="./courseName"/>
+                                <duration
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Duration"
+                                    name="./duration"/>
+                                <topics
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}false"
+                                    fieldLabel="Topics">
+                                    <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        emptyText="Enter a topic"
+                                        name="./topics"/>
+                                </topics>
+                            </items>
+                        </field>
+                    </courses>
+                </items>
+            </column>
+        </items>
+        <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            maxTab="{Long}2">
+            <items jcr:primaryType="nt:unstructured">
+                <tab1
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Existing Fields"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured"/>
+                        </column>
+                    </items>
+                </tab1>
+                <tab2
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Conditional Tab"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <fieldCount
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Number of Fields"
+                                    granite-class="field-count-select"
+                                    name="./fieldCount"
+                                    required="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <option1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="option 1"
+                                            value="1"/>
+                                        <option2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="option 2"
+                                            value="2"/>
+                                        <option3
+                                            jcr:primaryType="nt:unstructured"
+                                            text="option 3"
+                                            value="3"/>
+                                    </items>
+                                </fieldCount>
+                            </items>
+                        </column>
+                    </items>
+                </tab2>
+            </items>
+        </tabs>
+    </content>
+</jcr:root>

@@ -1,0 +1,47 @@
+<sly
+  data-sly-use.model="com.adobe.aem.guides.demo.core.models.ContactTableModel"
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+/>
+
+<sly data-sly-call="${clientlib.css @ categories='demo.formdatatable'}" />
+
+<section class="contact-table-section">
+  <h2>${model.heading}</h2>
+
+  <div class="contact-table-wrapper">
+    <table class="contact-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <sly data-sly-list.contact="${model.contacts}">
+          <tr
+            data-id="${contact.id}"
+            data-name="${contact.name}"
+            data-email="${contact.email}"
+            data-mobile="${contact.mobile}"
+          >
+            <td>${contact.name}</td>
+            <td>${contact.email}</td>
+            <td>${contact.mobile}</td>
+
+            <td class="contact-actions">
+              <button type="button" class="edit-contact">Edit</button>
+              <button type="button" class="delete-contact">Delete</button>
+            </td>
+          </tr>
+        </sly>
+
+        <tr data-sly-test="${model.contacts.size == 0}">
+          <td colspan="4" class="no-records">No contact records found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

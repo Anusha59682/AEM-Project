@@ -13,8 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='demo.base'}"/>
+<sly
+  data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+>
+  <sly data-sly-call="${clientlib.css @ categories='demo.base'}" />
 </sly>
 
-<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+<sly
+  data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"
+/>
