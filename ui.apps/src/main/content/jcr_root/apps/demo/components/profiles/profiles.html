@@ -1,0 +1,13 @@
+<div
+  class="profiles-component"
+  data-sly-use.model="com.adobe.aem.guides.demo.core.models.ProfilesModel"
+>
+  <h2 data-sly-test="${model.name}">${model.name}</h2>
+
+  <img
+    data-sly-test="${model.imagePath}"
+    src="${model.imagePath @ context='uri'}"
+    alt="${model.name}"
+    class="profiles-image"
+  />
+</div>
